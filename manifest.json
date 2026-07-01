@@ -1,0 +1,47 @@
+{
+  "name": "lamindbagent",
+  "display_name": "LaminDBAgent",
+  "description": "MCP adapter for LaminDB instance metadata, datasets, artifacts, collections, and guarded API/CLI planning for scientific data registries.",
+  "version": "0.1.0",
+  "entry_point": "lamindbagent",
+  "repository": "https://github.com/BaranziniLab/LaminDBAgent",
+  "license": "Apache-2.0",
+  "tools_count": 6,
+  "env_vars": [
+    {
+      "key": "LAMINDB_INSTANCE",
+      "required": false,
+      "auto_propagate": true,
+      "description": "Optional LaminDB instance identifier",
+      "secret": false
+    },
+    {
+      "key": "LAMINDB_API_URL",
+      "required": false,
+      "auto_propagate": true,
+      "description": "Optional LaminDB API base URL",
+      "secret": false
+    },
+    {
+      "key": "LAMINDB_API_KEY",
+      "required": false,
+      "auto_propagate": false,
+      "description": "Optional LaminDB API key",
+      "secret": true
+    },
+    {
+      "key": "LAMINDB_LOG_LEVEL",
+      "required": false,
+      "auto_propagate": true,
+      "description": "Logging level",
+      "secret": false,
+      "default": "INFO"
+    }
+  ],
+  "skills": [
+    {
+      "name": "lamindb-data-registry",
+      "description": "Use LaminDBAgent for LaminDB data registry workflows with provenance-first, guarded tool/API access."
+    }
+  ]
+}
