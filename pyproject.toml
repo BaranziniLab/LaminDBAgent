@@ -4,8 +4,8 @@ build-backend = "hatchling.build"
 
 [project]
 name = "lamindbagent"
-version = "0.2.0"
-description = "Security release for LaminDB access: your LaminDB key now goes only to a lamin.ai address you set. The lamin.ai/api address the 0.1.0 release used no longer exists; registry tools on the lamindb library arrive in 0.3.0."
+version = "0.3.0"
+description = "Read a LaminDB instance's registry with the lamindb library: search and filter artifacts, collections, runs, features and labels, and describe a record with its lineage. Read only; your key goes only to Lamin."
 readme = "README.md"
 license = {text = "Apache-2.0"}
 authors = [{name = "Baranzini Lab", email = "wanjun.gu@ucsf.edu"}]
@@ -14,6 +14,7 @@ dependencies = [
     "fastmcp>=4.0,<5",
     "httpx>=0.28.1,<1",
     "pydantic>=2.11.7,<3",
+    "lamindb==2.12.2",
 ]
 
 [project.scripts]

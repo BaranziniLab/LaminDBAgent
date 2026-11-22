@@ -1,10 +1,10 @@
 # LaminDBAgent
 
-Security release for LaminDB access: your LaminDB key now goes only to a lamin.ai address you set. The lamin.ai/api address the 0.1.0 release used no longer exists; registry tools on the lamindb library arrive in 0.3.0.
+Read a LaminDB instance's registry with the lamindb library: search and filter artifacts, collections, runs, features and labels, and describe a record with its lineage. Read only; your key goes only to Lamin.
 
-Current version: **0.2.0**
+Current version: **0.3.0**
 
-The 0.1.0 adapter sent your LaminDB key to any URL the model named, and its default `https://lamin.ai/api` answers 404. This release binds the key to a LaminHub address you set (a host under `lamin.ai`) and removes the dead default and the command runner. Registry tools on the `lamindb` library arrive in 0.3.0.
+This release adds read-only registry tools on `lamindb` 2.12.2 (Apache-2.0): `lamindb_instance`, `lamindb_search`, `lamindb_query` and `lamindb_describe`. lamindb connects to your instance itself; the extension keeps lamindb's settings in its own data folder (your `~/.lamin` is not read), hands it your key as `LAMIN_API_KEY` inside its own process, and never saves or deletes anything.
 
 This is a Biorouter extension (a `.brxt` bundle) built on the BRXT adapter kit
 1.0.1. Install it from BAAM in Biorouter, or from a file:
@@ -31,6 +31,7 @@ biorouter extension install dist/lamindbagent.brxt
 | `LAMINDB_INSTANCE` | no | no | Your LaminDB instance as owner/name |
 | `LAMINDB_API_URL` | no | no | Optional LaminHub API base URL (https, a host under lamin.ai). Leave empty unless LaminHub support gave you one. |
 | `LAMINDB_API_KEY` | no | yes | LaminDB API key from lamin.ai, sent only to lamin.ai hosts |
+| `LAMINDB_DATA_DIR` | no | no | Optional folder for the extension's own lamindb settings. Default: a folder beside Biorouter's data, so your ~/.lamin is not used. |
 | `LAMINDB_LOG_LEVEL` | no | no | Logging level |
 
 ## How it protects your credentials

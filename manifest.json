@@ -1,12 +1,12 @@
 {
   "name": "lamindbagent",
   "display_name": "LaminDBAgent",
-  "description": "Security release for LaminDB access: your LaminDB key now goes only to a lamin.ai address you set. The lamin.ai/api address the 0.1.0 release used no longer exists; registry tools on the lamindb library arrive in 0.3.0.",
-  "version": "0.2.0",
+  "description": "Read a LaminDB instance's registry with the lamindb library: search and filter artifacts, collections, runs, features and labels, and describe a record with its lineage. Read only; your key goes only to Lamin.",
+  "version": "0.3.0",
   "entry_point": "lamindbagent",
   "repository": "https://github.com/BaranziniLab/LaminDBAgent",
   "license": "Apache-2.0",
-  "tools_count": 2,
+  "tools_count": 6,
   "env_vars": [
     {
       "key": "LAMINDB_INSTANCE",
@@ -30,6 +30,13 @@
       "secret": true
     },
     {
+      "key": "LAMINDB_DATA_DIR",
+      "required": false,
+      "auto_propagate": true,
+      "description": "Optional folder for the extension's own lamindb settings. Default: a folder beside Biorouter's data, so your ~/.lamin is not used.",
+      "secret": false
+    },
+    {
       "key": "LAMINDB_LOG_LEVEL",
       "required": false,
       "auto_propagate": true,
@@ -41,7 +48,7 @@
   "skills": [
     {
       "name": "lamindb-data-registry",
-      "description": "How to call LaminDBAgent's tools to read a LaminDB registry."
+      "description": "How to call LaminDBAgent's tools: read a LaminDB instance's artifacts, collections, runs, features and labels by search, filtered queries and descriptions."
     }
   ]
 }

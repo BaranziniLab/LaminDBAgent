@@ -5,3 +5,7 @@ Licensed under the Apache License, Version 2.0.
 
 Built with the Biorouter BRXT adapter kit 1.0.1 (Apache-2.0), whose
 files are vendored under src/lamindbagent/_kit/ and tests/kit_testing/.
+
+Third-party software installed with this extension (not bundled; uv installs it from PyPI):
+- lamindb 2.12.2, lamindb-core and lamindb-setup, Apache-2.0, Copyright Lamin Labs, Inc.
+  https://github.com/laminlabs/lamindb
