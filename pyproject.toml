@@ -4,16 +4,16 @@ build-backend = "hatchling.build"
 
 [project]
 name = "lamindbagent"
-version = "0.1.0"
-description = "MCP adapter for LaminDB instance metadata, datasets, artifacts, collections, and guarded API/CLI planning for scientific data registries."
+version = "0.2.0"
+description = "Security release for LaminDB access: your LaminDB key now goes only to a lamin.ai address you set. The lamin.ai/api address the 0.1.0 release used no longer exists; registry tools on the lamindb library arrive in 0.3.0."
 readme = "README.md"
 license = {text = "Apache-2.0"}
 authors = [{name = "Baranzini Lab", email = "wanjun.gu@ucsf.edu"}]
 requires-python = ">=3.11"
 dependencies = [
-    "fastmcp>=2.11.2",
-    "httpx>=0.28.1",
-    "pydantic>=2.11.7",
+    "fastmcp>=4.0,<5",
+    "httpx>=0.28.1,<1",
+    "pydantic>=2.11.7,<3",
 ]
 
 [project.scripts]
@@ -23,6 +23,7 @@ lamindbagent = "lamindbagent.cli:main"
 packages = ["src/lamindbagent"]
 
 [tool.uv]
+# cryptography (pulled in by fastmcp) has no Intel Mac wheels from 49 on.
 constraint-dependencies = [
     "cryptography<49; sys_platform == 'darwin' and platform_machine == 'x86_64'",
 ]

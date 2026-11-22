@@ -1,0 +1,29 @@
+{
+  "kit_spec": 1,
+  "service": "lamindb",
+  "service_title": "LaminDB",
+  "kind": "adapter",
+  "log_level_env": "LAMINDB_LOG_LEVEL",
+  "instructions": "LaminDBAgent 0.2.0 reaches only a LaminHub API address the person set in LAMINDB_API_URL (a host under lamin.ai), with their LAMINDB_API_KEY. The lamin.ai/api address of 0.1.0 is gone (it answers 404). LaminDB itself is a Python library; registry tools on it arrive in 0.3.0. Until then, use lamindb in the Developer shell.",
+  "targets": [
+    {
+      "name": "hub",
+      "title": "A LaminHub API address you set (under lamin.ai)",
+      "base_url_env": "LAMINDB_API_URL",
+      "host_pattern": "([a-z0-9-]+\\.)*lamin\\.ai",
+      "credential": {
+        "env": "LAMINDB_API_KEY",
+        "scheme": "bearer"
+      },
+      "get_routes": [
+        "/**"
+      ],
+      "documentation": "https://docs.lamin.ai",
+      "examples": [
+        "/"
+      ]
+    }
+  ],
+  "id": "lamindbagent",
+  "display_name": "LaminDBAgent"
+}
