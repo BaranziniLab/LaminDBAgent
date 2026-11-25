@@ -6,3 +6,4 @@ previous/
 .env
 .env.*
 .DS_Store
+.lamin/
